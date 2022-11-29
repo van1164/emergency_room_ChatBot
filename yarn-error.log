@@ -1,0 +1,43 @@
+Arguments: 
+  /home/ec2-user/.nvm/versions/node/v16.18.1/bin/node /home/ec2-user/.nvm/versions/node/v16.18.1/bin/yarn add
+
+PATH: 
+  /home/ec2-user/.vscode-server/bin/6261075646f055b99068d3688932416f2346dd3b/bin/remote-cli:/home/ec2-user/.nvm/versions/node/v16.18.1/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/ec2-user/.local/bin:/home/ec2-user/bin
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  16.18.1
+
+Platform: 
+  linux x64
+
+Trace: 
+  SyntaxError: /home/ec2-user/project/emergency_room_ChatBot/package.json: Unexpected token < in JSON at position 22
+      at JSON.parse (<anonymous>)
+      at /home/ec2-user/.nvm/versions/node/v16.18.1/lib/node_modules/yarn/lib/cli.js:1629:59
+      at Generator.next (<anonymous>)
+      at step (/home/ec2-user/.nvm/versions/node/v16.18.1/lib/node_modules/yarn/lib/cli.js:310:30)
+      at /home/ec2-user/.nvm/versions/node/v16.18.1/lib/node_modules/yarn/lib/cli.js:321:13
+
+npm manifest: 
+  {
+    "dependencies": {
+  <<<<<<< HEAD
+      "request": "^2.88.2"
+  =======
+      "express": "^4.18.2",
+      "node-fetch": "^2.6.7",
+      "node-fetch-npm": "^2.0.4",
+      "request": "^2.88.2",
+      "xml-js": "^1.6.11"
+  >>>>>>> main
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

@@ -1,7 +1,7 @@
 const Address = require('./Address.js');
 const express = require('express');
 const request = require('request');
-require("dotenv").config("/home/ec2-user/OSS/Experiments/messenger/chat/custom_modules/.env");
+require("dotenv").config( {path: "/home/ec2-user/OSS/Experiments/messenger/chat/custom_modules/.env"} );
 // const KAKAO_KEY = process.env.KAKAO_KEY;
 const TOKEN = process.env.CHANNEL_ACCESS_TOKEN;
 
