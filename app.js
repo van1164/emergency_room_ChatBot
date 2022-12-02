@@ -38,7 +38,10 @@ res.sendStatus(200);
 }
 
 function find_current(eventObj,res){ //Two
-  console.log(Address.getAddress(eventObj.message.text))
+  console.log(eventObj.message.text);
+  Address.getAddress(eventObj.message.text, function (address) {
+    console.log(address[0].road_address.address_name);
+   })
   request.post(
     {
         url: TARGET_URL,

@@ -39,8 +39,8 @@ const fetchAPI = async () => {
           const data = await res.json();
 
           if(data.route != undefined){
-          const distance = data.route.trafast[0].summary.distance;
-          const duration = data.route.trafast[0].summary.duration;
+          const distance = data.route.trafast[0].summary.distance/1000;
+          const duration = data.route.trafast[0].summary.duration/1000/60;
           addrData["hospital_data"][idx].distance = distance;
           addrData["hospital_data"][idx].duration = duration;}
       });
