@@ -37,7 +37,6 @@ const fetchAPI = async () => {
 
       return fetch(request).then(async res => {
           const data = await res.json();
-
           if(data.route != undefined){
           const distance = data.route.trafast[0].summary.distance/1000;
           const duration = data.route.trafast[0].summary.duration/1000/60;

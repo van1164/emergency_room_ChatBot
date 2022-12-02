@@ -1,7 +1,7 @@
 const { response } = require('express');
-const fetch = require('node-fetch')
-
-globalThis.fetch = fetch.fetch;
+const fetch = () => import('node-fetch').then(({default: fetch}) => fetch());
+require("dotenv").config("/home/ec2-user/project/emergency_room_ChatBot/.env");
+const KAKAO_KEY = process.env.KAKAO_KEY;
 
 var AddressList = new Array();
 
@@ -12,25 +12,17 @@ function getAddress(currQuery, cb = ()=> {}) {
 			query: currQuery
 		}), {
 			method: "GET",
-			headers: { "Authorization": "KakaoAK c14234ba46c574c73715276c5644f397" }
+			headers: { "Authorization": KAKAO_KEY }
 		})
 			.then(response => response.json())
 			.then(data => {
 				//console.log(response)
-				AddressList = data.documents.map(({ road_address }) => ({ road_address }));					
-				//console.log(AddressList)
+				AddressList = data.documents.map(({ road_address }) => ({ road_address }));				
 				cb(AddressList);
 			});
 			
 	},100)
 }
-
-/* 
-getAddress('석수동길', function (address) {
-	console.log(address[0].road_address.address_name);
-})
-*/
-
 
 
 /*

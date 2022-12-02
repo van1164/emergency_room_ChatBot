@@ -2,12 +2,13 @@ const express = require('express');
 const app = express();
 const request = require('request');
 const convert = require("xml-js");
+require("dotenv").config( {path: "/home/ec2-user/project/emergency_room_ChatBot/.env"} );
+const EMERGENCY_KEY=process.env.EMERGENCY_KEY;
 
 var url = 'http://apis.data.go.kr/B552657/ErmctInfoInqireService/getSrsillDissAceptncPosblInfoInqire';
-var queryParams = '?' + encodeURIComponent('serviceKey') + '=52tXHgaW46YUpGn9k0r3IQrduIl6kBOl3Ta8Idra1%2BpPMYhL4qVCDu9itW8FVbDtMF4f9LAT9NJXEx7pvEJv%2FQ%3D%3D'; /* Service Key*/
-
-queryParams += '&' + encodeURIComponent('STAGE1') + '=' + encodeURIComponent('¼­¿ïÆ¯º°½Ã'); /* */
-queryParams += '&' + encodeURIComponent('STAGE2') + '=' + encodeURIComponent('°­³²±¸'); /* */
+var queryParams = '?' + encodeURIComponent('serviceKey') + EMERGENCY_KEY;
+queryParams += '&' + encodeURIComponent('STAGE1') + '=' + encodeURIComponent('ï¿½ï¿½ï¿½ï¿½Æ¯ï¿½ï¿½ï¿½ï¿½'); /* */
+queryParams += '&' + encodeURIComponent('STAGE2') + '=' + encodeURIComponent('ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½'); /* */
 queryParams += '&' + encodeURIComponent('SM_TYPE') + '=' + encodeURIComponent(''); /* */
 queryParams += '&' + encodeURIComponent('pageNo') + '=' + encodeURIComponent('1'); /* */
 queryParams += '&' + encodeURIComponent('numOfRows') + '=' + encodeURIComponent('10'); /* */

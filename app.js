@@ -1,12 +1,17 @@
 const Address = require('./Address.js');
 const express = require('express');
 const request = require('request');
+require("dotenv").config( {path: "/home/ec2-user/OSS/Experiments/messenger/chat/custom_modules/.env"} );
+// const KAKAO_KEY = process.env.KAKAO_KEY;
+const TOKEN = process.env.CHANNEL_ACCESS_TOKEN;
+
+
 const TARGET_URL = 'https://api.line.me/v2/bot/message/reply'
-const TOKEN = 'YK56BfHFgpILrxRk1FZrdcouFguf5CBA5qxM3zfDH6N9jR/cfPxVdK1P9vZHAk69mZDSlSkXNLy25pzqJbXrn3y76hwmH0Kiuvx3OadFYcuidWSp7VYAj4SqJSljv/q5KoYAOE2il8jmQkf4bQKvXQdB04t89/1O/w1cDnyilFU='
+
 const fs = require('fs');
 const path = require('path');
 const HTTPS = require('https');
-const domain = "2019102158.oss2022chatbot.tk"
+const domain = process.env.MY_DOMAIN;
 const sslport = 23023;
 const bodyParser = require('body-parser');
 const app = express();
